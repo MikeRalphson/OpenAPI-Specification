@@ -6,3 +6,4 @@ script:
   - npm install
   - npm test
   - sbt ++$TRAVIS_SCALA_VERSION test
+  - find . -name "*.md" | xargs node node_modules/mdv/mdv
