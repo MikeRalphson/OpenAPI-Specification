@@ -10,8 +10,10 @@
   "license": "Apache",
   "readmeFilename": "README.md",
   "dependencies": {
-    "tv4": "~1.1.x",
-    "chai": "1.9.x"
+    "chai": "1.9.x",
+    "highlightjs": "^9.10.0",
+    "markdown-it": "^8.4.0",
+    "tv4": "~1.1.x"
   },
   "devDependencies": {
     "glob": "^4.0.5",
