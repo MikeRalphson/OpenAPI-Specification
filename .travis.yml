@@ -17,3 +17,12 @@ install:
 script:
   - npm install
   - node node_modules/mdv/mdv versions/3.*.md
+  - scripts/md2html/build.sh
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GH_TOKEN
+  keep-history: true
+  on:
+    branch: pretty # change to master
+  local_dir: deploy
