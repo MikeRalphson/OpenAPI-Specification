@@ -69,6 +69,7 @@ function preface(title,options) {
     if (options.respec) {
         preface += '<script src="https://mermade.github.io/static/respec21/respec-oai.js" class="remove"></script>';
         preface += `<script class="remove">var respecConfig = ${JSON.stringify(respec)};</script>`;
+        preface += fs.readFileSync('./analytics/google.html','utf8');
         preface += '</head><body>';
         preface += '<style>';
         preface += '#respec-ui { visibility: hidden; }';
