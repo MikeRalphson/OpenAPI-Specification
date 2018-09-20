@@ -7,7 +7,7 @@ cp -p markdown/* ../../deploy/
 
 node md2html.js --respec --maintainers ./history/MAINTAINERS_v2.0.md ../../versions/2.0.md > ../../deploy/oas/v2.0.html
 
-for filename in ../../versions/3.*.md ; do
+for filename in ../../versions/[3456789].*.md ; do
   node md2html.js --respec --maintainers ../../MAINTAINERS.md ${filename} > ../../deploy/oas/v$(basename "$filename" .md).html
 done
 
