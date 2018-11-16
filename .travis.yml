@@ -1,6 +1,6 @@
 sudo: false
 language: node_js
 node_js:
-  - "node"
+  - "lts/*"
 script:
   - node node_modules/mdv/mdv versions/3.*.md
