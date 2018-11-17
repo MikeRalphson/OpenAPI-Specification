@@ -1,5 +1,34 @@
 language: node_js
 node_js:
   - "lts/*"
+before_script:
+  - git remote set-branches --add origin gh-pages
+  - git fetch origin gh-pages:gh-pages
 script:
+  # actions on the updated branch/PR
   - node node_modules/mdv/mdv versions/3.*.md
+  - node scripts/validateSchema/index.js schemas/v1.2/apiDeclaration.json schemas/v2.0/metaschema.json
+  - node scripts/validateSchema/index.js schemas/v2.0/schema.json schemas/v2.0/metaschema.json
+  - node scripts/validateSchema/index.js schemas/v3.0/schema.yaml schemas/v3.0/metaschema.json
+  - node scripts/validateExamples/index.js
+  # preserve scripts we need to run
+  - mkdir -p tmp src
+  - cp -pr scripts/* tmp/
+  - cp -pr versions/*.md src/
+  - cp -pr MAINTAINERS.md src/
+  - git show c740e950d9:MAINTAINERS.md > src/MAINT20.md
+  # switch to gh-pages
+  - git checkout gh-pages
+  - mkdir -p oas
+  - tmp/md2html/md2html.sh
+before_deploy:
+  - rm -f deployed*
+deploy:
+  provider: pages
+  verbose: true
+  skip-cleanup: true
+  keep-history: true
+  github-token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+  target-branch: gh-pages
+  on:
+    branch: master
