@@ -40,6 +40,12 @@ definitions:
       '^\$ref$':
         type: string
         format: uri-reference
+    description: >-
+      A simple object to allow referencing other components in the
+      specification, internally and externally.  The Reference Object is defined
+      by JSON Reference and follows the same structure, behavior and rules.  
+      For this specification, reference resolution is done as defined by the
+      JSON Reference specification and not by the JSON Schema specification.
   Info:
     type: object
     required:
@@ -62,8 +68,10 @@ definitions:
     patternProperties:
       '^x-': {}
     additionalProperties: false
-
-
+    description: >-
+      The object provides metadata about the API. The metadata can be used by
+      the clients if needed, and can be presented in editing or documentation
+      generation tools for convenience.
   Contact:
     type: object
     properties:
@@ -77,8 +85,8 @@ definitions:
         format: email
     patternProperties:
       '^x-': {}
-    additionalProperties: false    
-
+    additionalProperties: false
+    description: Contact information for the exposed API.
   License:
     type: object
     required:
@@ -92,7 +100,7 @@ definitions:
     patternProperties:
       '^x-': {}
     additionalProperties: false
-
+    description: License information for the exposed API.
   Server:
     type: object
     required:
@@ -109,7 +117,7 @@ definitions:
     patternProperties:
       '^x-': {}
     additionalProperties: false
-
+    description: An object representing a Server.
   ServerVariable:
     type: object
     required:
@@ -126,7 +134,9 @@ definitions:
     patternProperties:
       '^x-': {}
     additionalProperties: false
-
+    description: >-
+      An object representing a Server Variable for server URL template
+      substitution.
   Components:
     type: object
     properties:
@@ -196,7 +206,11 @@ definitions:
     patternProperties:
       '^x-': {}
     additionalProperties: false
-
+    description: >-
+      Holds a set of reusable objects for different aspects of the OAS. All
+      objects defined within the components object will have no effect on the
+      API unless they are explicitly referenced from properties outside the
+      components object.
   Schema:
     type: object
     properties:
@@ -327,8 +341,14 @@ definitions:
         $ref: '#/definitions/XML'
     patternProperties:
       '^x-': {}
-    additionalProperties: false        
-  
+    additionalProperties: false
+    description: >-
+      The Schema Object allows the definition of input and output data types.
+      These types can be objects, but also primitives and arrays. This object is
+      an extended subset of the JSON Schema Specification Wright Draft 00. 
+      Further information about the properties can be found in JSON Schema Core
+      and JSON Schema Validation. Unless stated otherwise, the property
+      definitions follow the JSON Schema specification as referenced here.
   Discriminator:
     type: object
     required:
@@ -340,7 +360,14 @@ definitions:
         type: object
         additionalProperties:
           type: string
-
+    description: >-
+      When request bodies or response payloads may be one of a number of
+      different schemas, a `discriminator` object can be used to aid in
+      serialization, deserialization, and validation.  The discriminator is a
+      specific object in a schema which is used to inform the consumer of the
+      specification of an alternative schema based on the value associated with
+      it.  Note, when using the discriminator, _inline_ schemas will not be
+      considered when using the discriminator.
   XML:
     type: object
     properties:
@@ -360,7 +387,11 @@ definitions:
     patternProperties:
       '^x-': {}
     additionalProperties: false
-
+    description: >-
+      A metadata object that allows for more fine-tuned XML model definitions. 
+      When using arrays, XML element names are *not* inferred (for
+      singular/plural forms) and the `name` property SHOULD be used to add that
+      information. See examples for expected behavior.
   Response:
     type: object
     required:
@@ -387,12 +418,17 @@ definitions:
     patternProperties:
       '^x-': {}
     additionalProperties: false
-
+    description: >-
+      Describes a single response from an API Operation, including design-time,
+      static  `links` to operations based on the response.
   MediaType:
     oneOf:
       - $ref: '#/definitions/MediaTypeWithExample'
       - $ref: '#/definitions/MediaTypeWithExamples'
-
+    description: >-
+      Each Media Type Object provides schema and examples for a the media type
+      identified by its key.  Media Type Objects can be used in a Content
+      Object.
   MediaTypeWithExample:
     type: object
     properties:
@@ -407,8 +443,11 @@ definitions:
           $ref: '#/definitions/Encoding'
     patternProperties:
       '^x-': {}
-    additionalProperties: false 
-
+    additionalProperties: false
+    description: >-
+      Each Media Type Object provides schema and examples for a the media type
+      identified by its key.  Media Type Objects can be used in a Content
+      Object.
   MediaTypeWithExamples:
     type: object
     required:
@@ -430,8 +469,11 @@ definitions:
           $ref: '#/definitions/Encoding'
     patternProperties:
       '^x-': {}
-    additionalProperties: false 
-
+    additionalProperties: false
+    description: >-
+      Each Media Type Object provides schema and examples for a the media type
+      identified by its key.  Media Type Objects can be used in a Content
+      Object.
   Example:
     type: object
     properties:
@@ -446,17 +488,26 @@ definitions:
     patternProperties:
       '^x-': {}
     additionalProperties: false
-
   Header:
     oneOf:
       - $ref: '#/definitions/HeaderWithSchema'
       - $ref: '#/definitions/HeaderWithContent'
-
+    description: >-
+      The Header Object follows the structure of the Parameter Object, with the
+      following changes:  1. `name` MUST NOT be specified, it is given in the
+      Headers Object. 1. `in` MUST NOT be specified, it is implicitly in
+      `header`. 1. All traits that are affected by the location MUST be
+      applicable to a location of `header` (for example, `style`).
   HeaderWithSchema:
     oneOf:
       - $ref: '#/definitions/HeaderWithSchemaWithExample'
       - $ref: '#/definitions/HeaderWithSchemaWithExamples'
-
+    description: >-
+      The Header Object follows the structure of the Parameter Object, with the
+      following changes:  1. `name` MUST NOT be specified, it is given in the
+      Headers Object. 1. `in` MUST NOT be specified, it is implicitly in
+      `header`. 1. All traits that are affected by the location MUST be
+      applicable to a location of `header` (for example, `style`).
   HeaderWithSchemaWithExample:
     type: object
     required:
@@ -490,8 +541,13 @@ definitions:
       example: {}
     patternProperties:
       '^x-': {}
-    additionalProperties: false  
-
+    additionalProperties: false
+    description: >-
+      The Header Object follows the structure of the Parameter Object, with the
+      following changes:  1. `name` MUST NOT be specified, it is given in the
+      Headers Object. 1. `in` MUST NOT be specified, it is implicitly in
+      `header`. 1. All traits that are affected by the location MUST be
+      applicable to a location of `header` (for example, `style`).
   HeaderWithSchemaWithExamples:
     type: object
     required:
@@ -532,7 +588,12 @@ definitions:
     patternProperties:
       '^x-': {}
     additionalProperties: false
-
+    description: >-
+      The Header Object follows the structure of the Parameter Object, with the
+      following changes:  1. `name` MUST NOT be specified, it is given in the
+      Headers Object. 1. `in` MUST NOT be specified, it is implicitly in
+      `header`. 1. All traits that are affected by the location MUST be
+      applicable to a location of `header` (for example, `style`).
   HeaderWithContent:
     type: object
     required:
@@ -558,15 +619,23 @@ definitions:
     patternProperties:
       '^x-': {}
     additionalProperties: false
-
+    description: >-
+      The Header Object follows the structure of the Parameter Object, with the
+      following changes:  1. `name` MUST NOT be specified, it is given in the
+      Headers Object. 1. `in` MUST NOT be specified, it is implicitly in
+      `header`. 1. All traits that are affected by the location MUST be
+      applicable to a location of `header` (for example, `style`).
   Paths:
     type: object
     patternProperties:
-      '^\/': 
+      ^\/:
         $ref: '#/definitions/PathItem'
       '^x-': {}
     additionalProperties: false
-
+    description: >-
+      Holds the relative paths to the individual endpoints and their operations.
+      The path is appended to the URL from the `Server Object` in order to
+      construct the full URL.  The Paths MAY be empty, due to ACL constraints.
   PathItem:
     type: object
     properties:
@@ -606,7 +675,11 @@ definitions:
     patternProperties:
       '^x-': {}
     additionalProperties: false
-
+    description: >-
+      Describes the operations available on a single path. A Path Item MAY be
+      empty, due to ACL constraints. The path itself is still exposed to the
+      documentation viewer but they will not know which operations and
+      parameters are available.
   Operation:
     type: object
     required:
@@ -657,7 +730,7 @@ definitions:
     patternProperties:
       '^x-': {}
     additionalProperties: false
-
+    description: Describes a single API operation on a path.
   Responses:
     type: object
     properties:
@@ -673,15 +746,33 @@ definitions:
       '^x-': {}
     minProperties: 1
     additionalProperties: false
- 
-
+    description: >-
+      A container for the expected responses of an operation. The container maps
+      a HTTP response code to the expected response.  It is not expected for the
+      documentation to necessarily cover all possible HTTP response codes, since
+      they may not be known in advance. However, it is expected for the
+      documentation to cover a successful operation response and any known
+      errors.  The `default` MAY be used as a default response object for all
+      HTTP codes  that are not covered individually by the specification.  The
+      `Responses Object` MUST contain at least one response code, and it  SHOULD
+      be the response for a successful operation call.
   SecurityRequirement:
     type: object
     additionalProperties:
       type: array
       items:
         type: string
-
+    description: >-
+      Lists the required security schemes to execute this operation. The name
+      used for each property MUST correspond to a security scheme declared in
+      the Security Schemes under the Components Object.  Security Requirement
+      Objects that contain multiple schemes require that all schemes MUST be
+      satisfied for a request to be authorized. This enables support for
+      scenarios where there multiple query parameters or HTTP headers are
+      required to convey security information.  When a list of Security
+      Requirement Objects is defined on the Open API object or Operation Object,
+      only one of Security Requirement Objects in the list needs to be satisfied
+      to authorize.
   Tag:
     type: object
     required:
@@ -696,7 +787,9 @@ definitions:
     patternProperties:
       '^x-': {}
     additionalProperties: false
-
+    description: >-
+      Allows adding meta data to a single tag that is used by the Operation
+      Object. It is not mandatory to have a Tag Object per tag used there.
   ExternalDocumentation:
     type: object
     required:
@@ -710,24 +803,30 @@ definitions:
     patternProperties:
       '^x-': {}
     additionalProperties: false
-
+    description: Allows referencing an external resource for extended documentation.
   Parameter:
     oneOf:
       - $ref: '#/definitions/ParameterWithSchema'
       - $ref: '#/definitions/ParameterWithContent'
-  
+    description: >-
+      Describes a single operation parameter.  A unique parameter is defined by
+      a combination of a name and location.
   ParameterWithSchema:
     oneOf:
       - $ref: '#/definitions/ParameterWithSchemaWithExample'
       - $ref: '#/definitions/ParameterWithSchemaWithExamples'
-
+    description: >-
+      Describes a single operation parameter.  A unique parameter is defined by
+      a combination of a name and location.
   ParameterWithSchemaWithExample:
     oneOf:
       - $ref: '#/definitions/ParameterWithSchemaWithExampleInPath'
       - $ref: '#/definitions/ParameterWithSchemaWithExampleInQuery'
       - $ref: '#/definitions/ParameterWithSchemaWithExampleInHeader'
       - $ref: '#/definitions/ParameterWithSchemaWithExampleInCookie'
-
+    description: >-
+      Describes a single operation parameter.  A unique parameter is defined by
+      a combination of a name and location.
   ParameterWithSchemaWithExampleInPath:
     type: object
     required:
@@ -774,7 +873,9 @@ definitions:
     patternProperties:
       '^x-': {}
     additionalProperties: false
-
+    description: >-
+      Describes a single operation parameter.  A unique parameter is defined by
+      a combination of a name and location.
   ParameterWithSchemaWithExampleInQuery:
     type: object
     required:
@@ -819,8 +920,10 @@ definitions:
       example: {}
     patternProperties:
       '^x-': {}
-    additionalProperties: false    
-
+    additionalProperties: false
+    description: >-
+      Describes a single operation parameter.  A unique parameter is defined by
+      a combination of a name and location.
   ParameterWithSchemaWithExampleInHeader:
     type: object
     required:
@@ -862,8 +965,10 @@ definitions:
       example: {}
     patternProperties:
       '^x-': {}
-    additionalProperties: false    
-
+    additionalProperties: false
+    description: >-
+      Describes a single operation parameter.  A unique parameter is defined by
+      a combination of a name and location.
   ParameterWithSchemaWithExampleInCookie:
     type: object
     required:
@@ -905,15 +1010,19 @@ definitions:
       example: {}
     patternProperties:
       '^x-': {}
-    additionalProperties: false  
-
+    additionalProperties: false
+    description: >-
+      Describes a single operation parameter.  A unique parameter is defined by
+      a combination of a name and location.
   ParameterWithSchemaWithExamples:
     oneOf:
       - $ref: '#/definitions/ParameterWithSchemaWithExamplesInPath'
       - $ref: '#/definitions/ParameterWithSchemaWithExamplesInQuery'
       - $ref: '#/definitions/ParameterWithSchemaWithExamplesInHeader'
       - $ref: '#/definitions/ParameterWithSchemaWithExamplesInCookie'
-
+    description: >-
+      Describes a single operation parameter.  A unique parameter is defined by
+      a combination of a name and location.
   ParameterWithSchemaWithExamplesInPath:
     type: object
     required:
@@ -966,7 +1075,9 @@ definitions:
     patternProperties:
       '^x-': {}
     additionalProperties: false
-
+    description: >-
+      Describes a single operation parameter.  A unique parameter is defined by
+      a combination of a name and location.
   ParameterWithSchemaWithExamplesInQuery:
     type: object
     required:
@@ -1017,8 +1128,10 @@ definitions:
             - $ref: '#/definitions/Reference'
     patternProperties:
       '^x-': {}
-    additionalProperties: false    
-
+    additionalProperties: false
+    description: >-
+      Describes a single operation parameter.  A unique parameter is defined by
+      a combination of a name and location.
   ParameterWithSchemaWithExamplesInHeader:
     type: object
     required:
@@ -1066,8 +1179,10 @@ definitions:
             - $ref: '#/definitions/Reference'
     patternProperties:
       '^x-': {}
-    additionalProperties: false    
-
+    additionalProperties: false
+    description: >-
+      Describes a single operation parameter.  A unique parameter is defined by
+      a combination of a name and location.
   ParameterWithSchemaWithExamplesInCookie:
     type: object
     required:
@@ -1116,12 +1231,16 @@ definitions:
     patternProperties:
       '^x-': {}
     additionalProperties: false
-
+    description: >-
+      Describes a single operation parameter.  A unique parameter is defined by
+      a combination of a name and location.
   ParameterWithContent:
     oneOf:
       - $ref: '#/definitions/ParameterWithContentInPath'
       - $ref: '#/definitions/ParameterWithContentNotInPath'
-
+    description: >-
+      Describes a single operation parameter.  A unique parameter is defined by
+      a combination of a name and location.
   ParameterWithContentInPath:
     type: object
     required:
@@ -1156,7 +1275,9 @@ definitions:
     patternProperties:
       '^x-': {}
     additionalProperties: false
-
+    description: >-
+      Describes a single operation parameter.  A unique parameter is defined by
+      a combination of a name and location.
   ParameterWithContentNotInPath:
     type: object
     required:
@@ -1192,7 +1313,9 @@ definitions:
     patternProperties:
       '^x-': {}
     additionalProperties: false
-
+    description: >-
+      Describes a single operation parameter.  A unique parameter is defined by
+      a combination of a name and location.
   RequestBody:
     type: object
     required:
@@ -1210,14 +1333,18 @@ definitions:
     patternProperties:
       '^x-': {}
     additionalProperties: false
-
+    description: Describes a single request body.
   SecurityScheme:
     oneOf:
       - $ref: '#/definitions/APIKeySecurityScheme'
       - $ref: '#/definitions/HTTPSecurityScheme'
       - $ref: '#/definitions/OAuth2SecurityScheme'
       - $ref: '#/definitions/OpenIdConnectSecurityScheme'
-  
+    description: >-
+      Allows the definition of a security scheme that can be used by the
+      operations. Supported schemes are HTTP authentication, an API key (either
+      as a header or as a query parameter) and OAuth2's common flows (implicit,
+      password, application and access code).
   APIKeySecurityScheme:
     type: object
     required:
@@ -1228,7 +1355,7 @@ definitions:
       type:
         type: string
         enum:
-          - apiKey      
+          - apiKey
       name:
         type: string
       in:
@@ -1242,12 +1369,10 @@ definitions:
     patternProperties:
       '^x-': {}
     additionalProperties: false
-  
   HTTPSecurityScheme:
     oneOf:
       - $ref: '#/definitions/NonBearerHTTPSecurityScheme'
       - $ref: '#/definitions/BearerHTTPSecurityScheme'
-
   NonBearerHTTPSecurityScheme:
     type: object
     required:
@@ -1268,7 +1393,6 @@ definitions:
     patternProperties:
       '^x-': {}
     additionalProperties: false
-
   BearerHTTPSecurityScheme:
     type: object
     required:
@@ -1290,7 +1414,6 @@ definitions:
     patternProperties:
       '^x-': {}
     additionalProperties: false
-
   OAuth2SecurityScheme:
     type: object
     required:
@@ -1308,7 +1431,6 @@ definitions:
     patternProperties:
       '^x-': {}
     additionalProperties: false
-
   OpenIdConnectSecurityScheme:
     type: object
     required:
@@ -1318,7 +1440,7 @@ definitions:
       type:
         type: string
         enum:
-          - openIdConnect      
+          - openIdConnect
       openIdConnectUrl:
         type: string
         format: uri-reference
@@ -1327,7 +1449,6 @@ definitions:
     patternProperties:
       '^x-': {}
     additionalProperties: false
-
   OAuthFlows:
     type: object
     properties:
@@ -1342,7 +1463,7 @@ definitions:
     patternProperties:
       '^x-': {}
     additionalProperties: false
-
+    description: Allows configuration of the supported OAuth Flows.
   ImplicitOAuthFlow:
     type: object
     required:
@@ -1362,7 +1483,6 @@ definitions:
     patternProperties:
       '^x-': {}
     additionalProperties: false
-
   PasswordOAuthFlow:
     type: object
     required:
@@ -1381,7 +1501,6 @@ definitions:
     patternProperties:
       '^x-': {}
     additionalProperties: false
-
   ClientCredentialsFlow:
     type: object
     required:
@@ -1400,7 +1519,6 @@ definitions:
     patternProperties:
       '^x-': {}
     additionalProperties: false
-
   AuthorizationCodeOAuthFlow:
     type: object
     required:
@@ -1423,12 +1541,13 @@ definitions:
     patternProperties:
       '^x-': {}
     additionalProperties: false
-
   Link:
     oneOf:
       - $ref: '#/definitions/LinkWithOperationRef'
       - $ref: '#/definitions/LinkWithOperationId'
-
+    description: >-
+      The `Link Object` is responsible for defining a possible operation based
+      on a single response.
   LinkWithOperationRef:
     type: object
     properties:
@@ -1446,7 +1565,9 @@ definitions:
     patternProperties:
       '^x-': {}
     additionalProperties: false
-
+    description: >-
+      The `Link Object` is responsible for defining a possible operation based
+      on a single response.
   LinkWithOperationId:
     type: object
     properties:
@@ -1463,14 +1584,22 @@ definitions:
     patternProperties:
       '^x-': {}
     additionalProperties: false
-
+    description: >-
+      The `Link Object` is responsible for defining a possible operation based
+      on a single response.
   Callback:
     type: object
     additionalProperties:
       $ref: '#/definitions/PathItem'
     patternProperties:
       '^x-': {}
-
+    description: >-
+      A map of possible out-of band callbacks related to the parent operation.
+      Each value in the map is a Path Item Object that describes a set of
+      requests that may be initiated by the API provider and the expected
+      responses. The key value used to identify the callback object is an
+      expression, evaluated at runtime, that identifies a URL to use for the
+      callback operation.
   Encoding:
     type: object
     properties:
@@ -1493,3 +1622,10 @@ definitions:
         type: boolean
         default: false
     additionalProperties: false
+    description: >-
+      An object representing multipart region encoding for `requestBody`
+      objects.
+description: >-
+  This is the root document object for the API specification. It combines what
+  previously was the Resource Listing and API Declaration (version 1.2 and
+  earlier) together into one document.
