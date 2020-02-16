@@ -19,6 +19,7 @@
   ],
   "dependencies": {},
   "devDependencies": {
+    "yaml": "^1.7.2",
     "mdv": "^1.0.7"
   },
   "keywords": [
