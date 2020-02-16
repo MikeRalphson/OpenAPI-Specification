@@ -28,7 +28,7 @@ jobs:
       run: npm i
 
     - name: convert YAML examples to JSON
-      run: find examples/v3* -type f -name "*.yaml" | xargs node scripts/yaml2json/index.js
+      run: find examples/v3* -type f -name "*.yaml" | xargs node scripts/yaml2json/yaml2json.js
 
     - name: git diff
       run: |
