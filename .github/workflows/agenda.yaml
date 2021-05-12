@@ -22,6 +22,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - uses: actions/checkout@v1 # checkout repo content
     - name: Create agenda issue
       run: gh issue create -l Housekeeping -t "Open Community (TDC) Meeting, `date --date='next Thu' +'%A %d %B %Y'`" -F .github/templates/agenda.md
 
