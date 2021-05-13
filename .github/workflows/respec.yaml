@@ -27,8 +27,9 @@ jobs:
       run: npm i
 
     - uses: actions/checkout@v2 # checkout gh-pages branch
-      ref: gh-pages
-      path: deploy
+      with:
+        ref: gh-pages
+        path: deploy
 
     - name: run main script
       run: scripts/md2html/build.sh
