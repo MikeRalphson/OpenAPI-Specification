@@ -7,7 +7,10 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://www.buymeacoffee.com/relequestual"><img src="https://avatars.githubusercontent.com/u/731158?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ben Hutton</b></sub></a><br /><a href="https://github.com/MikeRalphson/OpenAPI-Specification/commits?author=relequestual" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://www.buymeacoffee.com/relequestual"><img src="https://avatars.githubusercontent.com/u/731158?v=4?s=0" width="0px;" alt=""/><br /><sub><b>Ben Hutton</b></sub></a><br /><a href="https://github.com/MikeRalphson/OpenAPI-Specification/commits?author=relequestual" title="Documentation">📖</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://philsturgeon.com/"><img src="https://avatars.githubusercontent.com/u/67381?v=4?s=0" width="0px;" alt=""/><br /><sub><b>Phil Sturgeon</b></sub></a><br /><a href="#blog-philsturgeon" title="Blogposts">📝</a></td>
   </tr>
 </table>
 

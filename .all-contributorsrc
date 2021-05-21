@@ -13,11 +13,20 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "philsturgeon",
+      "name": "Phil Sturgeon",
+      "avatar_url": "https://avatars.githubusercontent.com/u/67381?v=4",
+      "profile": "https://philsturgeon.com/",
+      "contributions": [
+        "blog"
+      ]
     }
   ],
   "contributorsPerLine": 1,
   "projectName": "OpenAPI-Specification",
-  "projectOwner": "OAI/tsc",
+  "projectOwner": "MikeRalphson",
   "repoType": "github",
   "repoHost": "https://github.com",
   "skipCi": true
