@@ -2,7 +2,7 @@
   "files": [
     "CONTRIBUTORS.md"
   ],
-  "imageSize": 150,
+  "imageSize": 75,
   "commit": true,
   "contributors": [
     {
@@ -33,7 +33,7 @@
       ]
     }
   ],
-  "contributorsPerLine": 12,
+  "contributorsPerLine": 10,
   "projectName": "OpenAPI-Specification",
   "projectOwner": "MikeRalphson",
   "repoType": "github",
