@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "relequestual",
+      "name": "Ben Hutton",
+      "avatar_url": "https://avatars.githubusercontent.com/u/731158?v=4",
+      "profile": "https://www.buymeacoffee.com/relequestual",
+      "contributions": [
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "OpenAPI-Specification",
+  "projectOwner": "MikeRalphson",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
