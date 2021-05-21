@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "MikeRalphson",
+      "name": "Mike Ralphson",
+      "avatar_url": "https://avatars.githubusercontent.com/u/21603?v=4",
+      "profile": "http://mermade.github.io",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "OpenAPI-Specification",
+  "projectOwner": "MikeRalphson",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}

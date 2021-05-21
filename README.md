@@ -1,4 +1,7 @@
 # The OpenAPI Specification
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![Build Status](https://github.com/OAI/OpenAPI-Specification/workflows/validate-markdown/badge.svg)
 
@@ -56,3 +59,23 @@ Not all feedback can be accommodated and there may be solid arguments for or aga
 See: [License (Apache-2.0)](https://github.com/OAI/OpenAPI-Specification/blob/master/LICENSE)
 
 ![Analytics](https://ga-beacon.appspot.com/UA-831873-42/readme.md?pixel)
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="http://mermade.github.io"><img src="https://avatars.githubusercontent.com/u/21603?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mike Ralphson</b></sub></a><br /><a href="https://github.com/MikeRalphson/OpenAPI-Specification/commits?author=MikeRalphson" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
