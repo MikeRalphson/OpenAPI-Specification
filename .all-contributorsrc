@@ -1,9 +1,9 @@
 {
   "files": [
-    "README.md"
+    "CONTRIBUTORS.md"
   ],
-  "imageSize": 100,
-  "commit": false,
+  "imageSize": 0,
+  "commit": true,
   "contributors": [
     {
       "login": "relequestual",
@@ -15,9 +15,9 @@
       ]
     }
   ],
-  "contributorsPerLine": 7,
+  "contributorsPerLine": 1,
   "projectName": "OpenAPI-Specification",
-  "projectOwner": "MikeRalphson",
+  "projectOwner": "OAI/tsc",
   "repoType": "github",
   "repoHost": "https://github.com",
   "skipCi": true
