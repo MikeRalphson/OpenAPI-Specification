@@ -40,6 +40,16 @@
       "contributions": [
         "example"
       ]
+    },
+    {
+      "login": "earth2marsh",
+      "name": "Marsh Gardiner",
+      "avatar_url": "https://avatars.githubusercontent.com/u/54582?v=4",
+      "profile": "https://www.linkedin.com/in/marshgardiner/",
+      "contributions": [
+        "example",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 10,
