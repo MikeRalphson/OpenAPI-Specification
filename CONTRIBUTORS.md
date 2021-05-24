@@ -11,6 +11,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://philsturgeon.com/"><img src="https://avatars.githubusercontent.com/u/67381?v=4?s=75" width="75px;" alt=""/><br /><sub><b>Phil Sturgeon</b></sub></a><br /><a href="#blog-philsturgeon" title="Blogposts">📝</a></td>
     <td align="center"><a href="http://cebe.cc/"><img src="https://avatars.githubusercontent.com/u/189796?v=4?s=75" width="75px;" alt=""/><br /><sub><b>Carsten Brandt</b></sub></a><br /><a href="https://github.com/MikeRalphson/OpenAPI-Specification/commits?author=cebe" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/jdesrosiers"><img src="https://avatars.githubusercontent.com/u/716571?v=4?s=75" width="75px;" alt=""/><br /><sub><b>Jason Desrosiers</b></sub></a><br /><a href="#example-jdesrosiers" title="Examples">💡</a></td>
+    <td align="center"><a href="http://swagger.io"><img src="https://avatars.githubusercontent.com/u/241629?v=4?s=75" width="75px;" alt=""/><br /><sub><b>Ron</b></sub></a><br /><a href="https://github.com/MikeRalphson/OpenAPI-Specification/commits?author=webron" title="Documentation">📖</a> <a href="#example-webron" title="Examples">💡</a> <a href="https://github.com/MikeRalphson/OpenAPI-Specification/commits?author=webron" title="Code">💻</a></td>
   </tr>
 </table>
 
