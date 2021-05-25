@@ -9,3 +9,8 @@ package-lock.json
 deploy/
 history
 Gemfile.lock
+*.txt
+*.swp
+allcont-out.md
+todo.md
+lookup.json
