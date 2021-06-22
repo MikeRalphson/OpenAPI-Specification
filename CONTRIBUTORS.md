@@ -6,6 +6,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <table>
+  <tr>
+    <td align="center"><a href="http://thoughtspark.org"><img src="https://avatars.githubusercontent.com/u/98899?v=4?s=75" width="75px;" alt=""/><br /><sub><b>Jeremy Whitlock</b></sub></a><br /><a href="#example-whitlockjc" title="Examples">💡</a> <a href="https://github.com/MikeRalphson/OpenAPI-Specification/commits?author=whitlockjc" title="Documentation">📖</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-restore -->
