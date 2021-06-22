@@ -27,10 +27,10 @@ jobs:
     steps:
       - name: Automerging
         uses: pascalgn/automerge-action@v0.14.2
-        with:
-          args: "--trace"
+        #with:
+        #  args: "--trace"
         env:
-          GITHUB_TOKEN: "${{ secrets.GH_TOKEN }}"
+          GITHUB_TOKEN: "${{ secrets.FORK_TOKEN }}"
           MERGE_LABELS: ""
           MERGE_METHOD: "rebase"
           MERGE_COMMIT_MESSAGE: "pull-request-title"
