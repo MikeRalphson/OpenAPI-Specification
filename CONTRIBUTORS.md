@@ -6,6 +6,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <table>
+  <tr>
+    <td align="center"><a href="http://www.bizcoder.com"><img src="https://avatars.githubusercontent.com/u/447694?v=4?s=75" width="75px;" alt=""/><br /><sub><b>Darrel</b></sub></a><br /><a href="https://github.com/MikeRalphson/OpenAPI-Specification/commits?author=darrelmiller" title="Documentation">📖</a> <a href="#example-darrelmiller" title="Examples">💡</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-restore -->
