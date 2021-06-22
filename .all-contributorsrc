@@ -1,0 +1,14 @@
+{
+  "files": [
+    "CONTRIBUTORS.md"
+  ],
+  "imageSize": 75,
+  "commit": true,
+  "contributors": [],
+  "contributorsPerLine": 10,
+  "projectName": "OpenAPI-Specification",
+  "projectOwner": "MikeRalphson",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
